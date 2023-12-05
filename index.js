@@ -56,3 +56,42 @@ const questions = [
         writeToFile('README.md', READMEContent);
     });
   }
+
+  function generateREADME(answers) {
+    return `
+  # ${answers.title}
+  
+  ## Description
+  ${answers.description || 'No description provided.'}
+  
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  
+  ## Installation
+  ${answers.installation || 'No installation instructions provided.'}
+  
+  ## Usage
+  ${answers.usage || 'No usage information provided.'}
+  
+  ## License
+  ${answers.license} License](https://img.shields.io/badge/license-${encodeURIComponent(answers.license)}-brightgreen)
+  
+  ${answers.license === 'None' ? '' : `This project is licensed under the ${answers.license} license.`}
+  
+  ## Contributing
+  ${answers.contributing || 'No contribution guidelines provided.'}
+  
+  ## Tests
+  ${answers.tests || 'No test instructions provided.'}
+  
+  ## Questions
+  For questions about this project, contact [${answers.questions}](https://github.com/${answers.questions}) or email at ${answers.questions || 'No email provided.'}.
+  `;
+  }
+
+  init();
