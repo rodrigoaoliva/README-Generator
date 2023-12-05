@@ -44,16 +44,23 @@ const questions = [
     },
   ];
 
-  function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-      err ? console.error(err) : console.log(`${fileName} successfully created!`)
-    );
+  function writeToFile(data) {
+    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, '');
+    const fileName = `README_${timestamp}.md`;
+  
+    fs.writeFile(fileName, data, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(`${fileName} successfully created!`);
+      }
+    });
   }
 
   function init() {
     inquirer.prompt(questions).then((answers) => {
         const READMEContent = generateREADME(answers);
-        writeToFile('README.md', READMEContent);
+        writeToFile(READMEContent);
     });
   }
 
@@ -79,7 +86,7 @@ const questions = [
   ${answers.usage || 'No usage information provided.'}
   
   ## License
-  ${answers.license} License](https://img.shields.io/badge/license-${encodeURIComponent(answers.license)}-brightgreen)
+  ![${answers.license} License](https://img.shields.io/badge/license-${encodeURIComponent(answers.license)}-brightgreen)
   
   ${answers.license === 'None' ? '' : `This project is licensed under the ${answers.license} license.`}
   
