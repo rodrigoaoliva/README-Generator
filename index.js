@@ -49,3 +49,10 @@ const questions = [
       err ? console.error(err) : console.log(`${fileName} successfully created!`)
     );
   }
+
+  function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const READMEContent = generateREADME(answers);
+        writeToFile('README.md', READMEContent);
+    });
+  }
