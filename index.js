@@ -43,3 +43,9 @@ const questions = [
       name: 'questions',
     },
   ];
+
+  function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+      err ? console.error(err) : console.log(`${fileName} successfully created!`)
+    );
+  }
