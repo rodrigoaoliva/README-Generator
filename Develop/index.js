@@ -19,7 +19,7 @@ const questions = [
     },
     {
       type: 'input',
-      message: 'Provide instructions and examples for use. :',
+      message: 'Provide instructions and examples for use:',
       name: 'usage',
     },
     {
@@ -39,8 +39,13 @@ const questions = [
     },
     {
       type: 'input',
-      message: 'Enter your Github profile and email so others can get in touch with you if they have questions or need further clarification about the project',
-      name: 'questions',
+      message: 'Enter your Github username so others can get in touch with you if they have questions or need further clarification about the project:',
+      name: 'github',
+    },
+    {
+      type: 'input',
+      message: 'Enter your email address so others can get in touch with you if they have questions or need further clarification about the project:',
+      name: 'email',
     },
   ];
 
@@ -97,7 +102,7 @@ const questions = [
   ${answers.tests || 'No test instructions provided.'}
   
   ## Questions
-  For questions about this project, contact [${answers.questions}](https://github.com/${answers.questions}) or email at ${answers.questions || 'No email provided.'}.
+  For questions about this project, contact [${answers.github}](https://github.com/${answers.github}) or email at ${answers.email || 'No email provided.'}.
   `;
   }
 

@@ -1,5 +1,5 @@
 
-  # Title project
+  # Title
   
   ## Description
   Short description
@@ -13,7 +13,7 @@
   - [Questions](#questions)
   
   ## Installation
-  1. Step one 2. Step two
+  Steps
   
   ## Usage
   Instructions
@@ -24,11 +24,11 @@
   This project is licensed under the MIT license.
   
   ## Contributing
-  https://github.com/rodrigoaoliva
+  https://github.com
   
   ## Tests
   Tests
   
   ## Questions
-  For questions about this project, contact [rodrigoaoliva rodrigoaoliva1@gmail.com](https://github.com/rodrigoaoliva rodrigoaoliva1@gmail.com) or email at rodrigoaoliva rodrigoaoliva1@gmail.com.
+  For questions about this project, contact [rodrigoaoliva](https://github.com/rodrigoaoliva) or email at rodrigoaoliva1@gmail.com.
   
